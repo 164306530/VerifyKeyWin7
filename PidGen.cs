@@ -1,3 +1,14 @@
+                //string RightsAccountCertificate = HttpUtility.HtmlEncode(PidGen.GetSLCertify());
+                //string ProductKeyCertificate = HttpUtility.HtmlEncode(PidGen.GetSLCertifyProduct(txtKey.Text, aid));
+                //if(ProductKeyCertificate.StartsWith("0x"))
+                //{
+                    //result += "Error Coder:" + ProductKeyCertificate;
+                //}
+                //else
+                //{
+                    //result += "Error Coder:" + PidGen.GetErrorCoderWin7(ProductKeyCertificate, RightsAccountCertificate);
+                //}
+
 
 namespace PidKey
 {
