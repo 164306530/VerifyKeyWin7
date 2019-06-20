@@ -1,5 +1,5 @@
                 //string RightsAccountCertificate = HttpUtility.HtmlEncode(PidGen.GetSLCertify());
-                //string ProductKeyCertificate = HttpUtility.HtmlEncode(PidGen.GetSLCertifyProduct(txtKey.Text, aid));
+                //string ProductKeyCertificate = HttpUtility.HtmlEncode(PidGen.GetSLCertifyProduct(txtKey.Text, aid, SLID));
                 //if(ProductKeyCertificate.StartsWith("0x"))
                 //{
                     //result += "Error Coder:" + ProductKeyCertificate;
