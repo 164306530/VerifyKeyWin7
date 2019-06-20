@@ -59,10 +59,10 @@ namespace PidKey
                 return responseXML;
             }
         }
-        public static string GetSLCertifyProduct(string ProductKey,string ActivationID)
+        public static string GetSLCertifyProduct(string ProductKey,string ActivationID,string SLID)
         {
 
-            string requestXml = "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soapenc=\"http://schemas.xmlsoap.org/soap/encoding/\"><soap:Body><RequestSecurityToken xmlns=\"http://schemas.xmlsoap.org/ws/2004/04/security/trust\"><TokenType>PKC</TokenType><RequestType>http://schemas.xmlsoap.org/ws/2004/04/security/trust/Issue</RequestType><UseKey><Values xsi:nil=\"1\"/></UseKey><Claims><Values xmlns:q1=\"http://schemas.xmlsoap.org/ws/2004/04/security/trust\" soapenc:arrayType=\"q1:TokenEntry[3]\"><TokenEntry><Name>ProductKey</Name><Value>"+ ProductKey + "</Value></TokenEntry><TokenEntry><Name>ProductKeyType</Name><Value>msft:rm/algorithm/pkey/2005</Value></TokenEntry><TokenEntry><Name>ProductKeyActConfigId</Name><Value>msft2005:"+ ActivationID+ "&amp;oEROiKcBAAAAAAAA</Value></TokenEntry></Values></Claims></RequestSecurityToken></soap:Body></soap:Envelope>";
+            string requestXml = "<soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:soapenc=\"http://schemas.xmlsoap.org/soap/encoding/\"><soap:Body><RequestSecurityToken xmlns=\"http://schemas.xmlsoap.org/ws/2004/04/security/trust\"><TokenType>PKC</TokenType><RequestType>http://schemas.xmlsoap.org/ws/2004/04/security/trust/Issue</RequestType><UseKey><Values xsi:nil=\"1\"/></UseKey><Claims><Values xmlns:q1=\"http://schemas.xmlsoap.org/ws/2004/04/security/trust\" soapenc:arrayType=\"q1:TokenEntry[3]\"><TokenEntry><Name>ProductKey</Name><Value>"+ ProductKey + "</Value></TokenEntry><TokenEntry><Name>ProductKeyType</Name><Value>msft:rm/algorithm/pkey/2005</Value></TokenEntry><TokenEntry><Name>ProductKeyActConfigId</Name><Value>msft2005:"+ ActivationID+ "&amp;"+ SLID +"</Value></TokenEntry></Values></Claims></RequestSecurityToken></soap:Body></soap:Envelope>";
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://activation.sls.microsoft.com/slpkc/SLCertifyProduct.asmx");
             byte[] bytes;
             bytes = System.Text.Encoding.ASCII.GetBytes(requestXml);
